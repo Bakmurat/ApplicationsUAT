@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: guestbook
+  name: nginx-test
   namespace: argo-cd
 spec:
   project: default
   source:
-    repoURL: https://github.com/argoproj/argocd-example-apps.git
+    repoURL: git@github.com:Bakmurat/ApplicationsUAT.git
     targetRevision: HEAD
-    path: guestbook
+    path: nginx
   destination:
     server: https://kubernetes.default.svc
-    namespace: guestbook
+    namespace: nginxtest
